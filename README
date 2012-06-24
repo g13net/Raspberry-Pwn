@@ -1,21 +1,6 @@
-  _____      ___  _ ___ ___   _____  _____ ___ ___ ___ ___
- | _ \ \    / / \| |_ _| __| | __\ \/ / _ \ _ \ __/ __/ __|
- |  _/\ \/\/ /| .` || || _|  | _| >  <|  _/   / _|\__ \__ \
- |_|   \_/\_/ |_|\_|___|___| |___/_/\_\_| |_|_\___|___/___/
+RaspPwn : A Raspberry Pi pentesting suite
 
- Raspberry Pwn : A Raspberry Pi pentesting suite by Pwnie Express (pwnieexpress.com)
- 
- Release 0.1 (June 2012)
-
-----------------------------------------------
-Legal Stuff
-----------------------------------------------
-
-This software is provided free of charge under the GNU Public License (http://www.gnu.org/licenses/gpl.html). 
-
-As with any software application, downloads/transfers of this software is subject to export controls under the U.S. Commerce Department's Export Administration Regulations (EAR). By using this software you certify your complete understanding of and compliance with these regulations.
-
-All Pwnie Express products/releases are for legally authorized uses only. Under NO circumstances is Pwnie Express, Rapid Focus Security, or any of its affiliates, tradenames, or subsidiaries liable for any damage, loss of data, or misuse resulting from the use of this software.
+**Based on Pwnie Express's Raspberry Pwn https://github.com/pwnieexpress/Raspberry-Pwn
 
 ----------------------------------------------
 What you will need
@@ -46,7 +31,7 @@ Installation Steps
 
   # aptitude -y install git
 
-5. Download the Raspberry Pwn installer from the Pwnie Express Github repository:
+5. Download the Raspberry Pwn installer from the g13net Github repository:
 
   # git clone https://github.com/g13net/Raspberry-Pwn.git
 
@@ -57,18 +42,4 @@ Installation Steps
   # ./INSTALL_raspberry_pwn.sh
 
 
-----------------------------------------------
-Known Issues
-----------------------------------------------
 
-
-----------------------------------------------
-Support
-----------------------------------------------
-
-
-Feature requests / bug reports:
-https://github.com/pwnieexpress/Raspberry-Pwn/issues
-
-Community Support Forum:
-http://forum.pwnieexpress.com
