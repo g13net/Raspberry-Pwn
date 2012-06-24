@@ -1,7 +1,7 @@
 #!/bin/bash
-# Raspberry Pwn 0.1 : A Raspberry Pi Pentesting suite by Pwnie Express
-# pwnieexpress.com
-# Installer Revision 6.12.2012
+# RaspPwn: A Raspberry Pi Pentesting suite
+# g13net.com
+
 
 echo ""
 
@@ -11,22 +11,12 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# Verify Raspberry Pwn 0.1 is not already installed
+# Verify RaspPwn  is not already installed
 if [ "`grep -o 0.1 /etc/motd.tail`" == "0.1" ] ; then 
-        echo "[-] Raspberry Pwn 0.1 already installed. Aborting..."
+        echo "[-] RaspPwn 0.1 already installed. Aborting..."
         exit 1
 fi
 
-
-echo "  _____      ___  _ ___ ___   _____  _____ ___ ___ ___ ___      "
-echo " | _ \ \    / / \| |_ _| __| | __\ \/ / _ \ _ \ __/ __/ __|     "
-echo " |  _/\ \/\/ /| .\` || || _|  | _| >  <|  _/   / _|\__ \__ \    "
-echo " |_|   \_/\_/ |_|\_|___|___| |___/_/\_\_| |_|_\___|___/___/     "
-echo ""
-echo "              === Raspberry Pwn Release 0.1 ===                 "
-echo "     A Raspberry Pi Pentesting suite by PwnieExpress.com        "
-echo ""
-echo "----------------------------------------------------------------"
 echo " This installer will load a comprehensive security pentesting   "
 echo " software suite onto your Raspberry Pi. Note that the Debian    "
 echo " Raspberry Pi distribution must be installed onto the SD card   "
@@ -70,15 +60,17 @@ make install
 cd ../..
 echo "[+] Wireless pentesting tools installed."
 
-# Install Metasploit -- Removed for now. Not enough memory to run on Pi
-#echo "[+] Installing latest Metasploit Framework..."
-#aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev
-#mkdir /opt/metasploit
-#cd /opt/metasploit
-#wget http://downloads.metasploit.com/data/releases/framework-latest.tar.bz2
-#tar jxvf framework-latest.tar.bz2
-#ln -sf /opt/metasploit/msf3/msf* /usr/local/bin/
-#echo "[+] Latest Metasploit Framework installed."
+# Install Metasploit
+echo "[+] Installing latest Metasploit Framework..."
+# Setting more RAM available for Metasploit
+cp /boot/arm224_start.elf /boot/start.elf
+aptitude -y install ruby irb ri rubygems libruby ruby-dev libpcap-dev
+mkdir /opt/metasploit
+cd /opt/metasploit
+wget http://downloads.metasploit.com/data/releases/framework-latest.tar.bz2
+tar jxvf framework-latest.tar.bz2
+ln -sf /opt/metasploit/msf3/msf* /usr/local/bin/
+echo "[+] Latest Metasploit Framework installed."
 
 # Install Perl/Python tools to /pentest
 echo "[+] Installing Perl/Python tools to /pentest..."
